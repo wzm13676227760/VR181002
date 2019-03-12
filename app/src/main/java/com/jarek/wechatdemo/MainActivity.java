@@ -21,6 +21,7 @@ import com.jarek.wechatdemo.adapter.TabFragmentAdapter;
 import com.jarek.wechatdemo.view.TabContainerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
@@ -30,7 +31,6 @@ import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
  * Created by Jarek(王健) on 2016/3/10.
  */
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
-
     public static void startMainActivity (Activity activity, int tab) {
         Intent intent = new Intent(activity, MainActivity.class);
         intent.putExtra("tab", tab);
