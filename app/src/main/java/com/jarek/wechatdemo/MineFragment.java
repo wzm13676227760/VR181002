@@ -135,7 +135,7 @@ public class MineFragment extends Fragment implements View.OnClickListener{
             // 将此属性设置为true可以使得图片停在动画结束时的位置
             animation.setFillAfter(true);
             //动画持续时间，单位为毫秒
-            animation.setDuration(2000);
+            animation.setDuration(200);
             //滚动条开始动画
             scrollbar.startAnimation(animation);
         }
