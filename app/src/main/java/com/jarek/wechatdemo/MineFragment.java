@@ -36,7 +36,6 @@ public class MineFragment extends Fragment implements View.OnClickListener{
     private int bmpW;
     //一倍滚动量
     private int one;
-    private int two;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -100,7 +99,6 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         offset = (screenW / 3 - bmpW) / 3;
         //计算出切换一个界面时，滚动条的位移量
         one = offset * 3 + bmpW;
-        two=offset * 3;
         Matrix matrix = new Matrix();
         matrix.postTranslate(offset, 0);
         //将滚动条的初始位置设置成与左边界间隔一个offset
