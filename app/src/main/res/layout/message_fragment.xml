@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
               android:background="@android:color/white"
               android:layout_height="match_parent"
               android:orientation="vertical">
@@ -8,44 +10,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="1">
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/add_linkman"
-            android:src="@drawable/addlinkman"
-            android:layout_marginLeft="5dp"/>
-        <EditText
-            android:layout_width="270dp"
-            android:layout_height="50dp"
-            android:id="@+id/interesting_content"
-            android:layout_weight="0.04" />
+        android:orientation="vertical"
+        >
+
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:id="@+id/message_manage"
-            android:src="@drawable/messagemanage" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/add_linkman"
+            android:src="@drawable/addlinkman"
+            android:layout_gravity="right"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="动态圈"
+            android:id="@+id/share_title"
+            android:textSize="25dp"
+            android:textColor="#000000"
+            android:layout_gravity="center" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <ListView
+            android:id="@+id/shareList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/share_title"
-            android:text="动态分享"
-            android:textSize="28dp"
-            android:textAlignment="center"
-            android:textColor="#000000"/>
-<ListView
-    android:id="@+id/shareList"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 

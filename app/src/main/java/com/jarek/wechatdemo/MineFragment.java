@@ -15,9 +15,14 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 public class MineFragment extends Fragment implements View.OnClickListener{
@@ -36,6 +41,12 @@ public class MineFragment extends Fragment implements View.OnClickListener{
     private int bmpW;
     //一倍滚动量
     private int one;
+    //我的收藏、分享、关注列表
+    private List<Share> mycollectList=new ArrayList<>();
+    private List<Share> myshareList=new ArrayList<>();
+    private List<Share> myconcernList=new ArrayList<>();
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -83,8 +94,24 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         };
         //绑定适配器
         viewPager.setAdapter(mPagerAdapter);
+
+        initmycollect();//初始化收藏列表数据
+        ShareAdapter adapter=new ShareAdapter(getActivity(),R.layout.share_item,mycollectList);
+        ListView mycollectlist=(ListView)view1.findViewById(R.id.MyCollectList);
+        mycollectlist.setAdapter(adapter);
+
+        initmycollect();//初始化分享列表数据
+        ShareAdapter adapter2=new ShareAdapter(getActivity(),R.layout.share_item,myshareList);
+        ListView mycollectlist2=(ListView)view2.findViewById(R.id.MyShareList);
+        mycollectlist2.setAdapter(adapter);
+
+        initmycollect();//初始化关注列表数据
+        ShareAdapter adapter3=new ShareAdapter(getActivity(),R.layout.share_item,myconcernList);
+        ListView mycollectlist3=(ListView)view3.findViewById(R.id.MyConcernList);
+        mycollectlist3.setAdapter(adapter);
         //设置viewPager的初始界面为第一个界面
         viewPager.setCurrentItem(0);
+
         //添加切换界面的监听器
         viewPager.addOnPageChangeListener(new MyOnPageChangeListener());
         // 获取滚动条的宽度
@@ -104,6 +131,29 @@ public class MineFragment extends Fragment implements View.OnClickListener{
         //将滚动条的初始位置设置成与左边界间隔一个offset
         scrollbar.setImageMatrix(matrix);
         return view;
+    }
+
+    public int randomByMinMax(int min, int max) {
+        return new Random().nextInt(max + 1 - min) + min;
+    }
+
+    private void initmycollect(){
+        SimpleDateFormat formatter  =new  SimpleDateFormat("yyyy年MM月dd日  HH:mm:ss");
+//        Date curDate =new Date(System.currentTimeMillis()+ randomByMinMax(10000, 99999));//获取当前时间
+//        String str =formatter.format(curDate);
+        for (int i=0;i<8;i++){
+            //int shareId,String shareName,int headImage,String shareWords,int shareImages,String shareDate,String shareComment
+            Share shareuser1=new Share(1,"apple",R.drawable.header1,"apple is delicious",R.drawable.lijiang1,formatter.format(new Date(System.currentTimeMillis()+ randomByMinMax(10000, 99999))),"yes I think so that.");
+            mycollectList.add(shareuser1);
+            Share shareuser2=new Share(2,"orange",R.drawable.header2,"orange is delicious",R.drawable.lijiang2,formatter.format(new Date(System.currentTimeMillis()+ randomByMinMax(10000, 99999))),"yes I think so that.");
+            mycollectList.add(shareuser2);
+            Share shareuser3=new Share(3,"pear",R.drawable.header3,"pear is delicious",R.drawable.hangzhou1,formatter.format(new Date(System.currentTimeMillis()+ randomByMinMax(10000, 99999))),"yes I think so that.");
+            mycollectList.add(shareuser3);
+            Share shareuser4=new Share(4,"pear",R.drawable.header4,"pear is delicious",R.drawable.hangzhou2,formatter.format(new Date(System.currentTimeMillis()+ randomByMinMax(10000, 99999))),"yes I think so that.");
+            mycollectList.add(shareuser4);
+            Share shareuser5=new Share(5,"pear",R.drawable.header5,"pear is delicious",R.drawable.hangzhou3,formatter.format(new Date(System.currentTimeMillis()+ randomByMinMax(10000, 99999))),"yes I think so that.");
+            mycollectList.add(shareuser5);
+        }
     }
 
     public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener {
