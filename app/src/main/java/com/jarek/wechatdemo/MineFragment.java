@@ -46,7 +46,6 @@ public class MineFragment extends Fragment implements View.OnClickListener{
     private List<Share> myshareList=new ArrayList<>();
     private List<Share> myconcernList=new ArrayList<>();
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){

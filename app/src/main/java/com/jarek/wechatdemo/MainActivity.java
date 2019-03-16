@@ -31,6 +31,7 @@ import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
  * Created by Jarek(王健) on 2016/3/10.
  */
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
+
     public static void startMainActivity (Activity activity, int tab) {
         Intent intent = new Intent(activity, MainActivity.class);
         intent.putExtra("tab", tab);
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
         setContentView(R.layout.main_activity);
         initViews();
+
     }
 
 
