@@ -1,26 +1,32 @@
 package com.jarek.wechatdemo;
 import java.util.Random;
+
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+//import com.jarek.wechatdemo.wxdemo.ImagePickerAdapter;
+//import com.jarek.wechatdemo.wxdemo.WxDemoActivity;
 
-
-public class MessageFragment extends Fragment {
+public class MessageFragment extends Fragment implements View.OnClickListener{
     private List<Share> shareList=new ArrayList<>();
 //private String[] data={"apple","pear","orange","banana","watermelon","strawberry"};
-
+    private ImageView shareImage;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,8 +36,22 @@ public class MessageFragment extends Fragment {
 //        ArrayAdapter<String> adapter=new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,data);
         ListView sharelist=(ListView)view.findViewById(R.id.shareList);
         sharelist.setAdapter(adapter);
+
+
+        shareImage= (ImageView)view.findViewById(R.id.share);
+        shareImage.setOnClickListener(this);
         return view;
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.share:
+                //startActivity(new Intent(this, WxDemoActivity.class));
+                break;
+        }
+    }
+
     public int randomByMinMax(int min, int max) {
         return new Random().nextInt(max + 1 - min) + min;
     }
