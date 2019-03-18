@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/headimage"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="23dp"
+            android:id="@+id/sharename"
+            android:text="sharename"
+            android:textColor="#6666CC"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:id="@+id/sharewords"
+            android:text="sharewords"
+            android:textColor="#000000"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:id="@+id/shareimages"/>
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/shareimages2"/>
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/shareimages3"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/address"
+            android:text="具体位置"
+            android:textSize="10dp"
+            android:textColor="#000099"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:id="@+id/sharedate"
+                    android:text="sharedate"
+                    android:textColor="#666666"
+                    android:gravity="center_vertical"
+                    android:textSize="12dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:id="@+id/collectbutton"
+                android:text="收藏"
+                android:layout_marginLeft="50dp"
+                android:textSize="10dp"/>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:id="@+id/praisebutton"
+                android:text="点赞"
+                android:textSize="10dp"/>
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="35dp"
+                android:id="@+id/commentbutton"
+                android:text="评论"
+                android:textSize="10dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sharecomment"
+            android:text="sharecomment"
+            android:background="#F5F5F5"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+</LinearLayout>
